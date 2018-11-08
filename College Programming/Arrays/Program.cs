@@ -7,8 +7,10 @@ namespace Arrays
         static void Main(string[] args)
         {
             string[] names = { "Joe" , "Jill" , "Bob" , "Sam" , "Fred" };
-            
-            while (true)
+
+            Boolean running = true;
+
+            while (running)
             {
                 Console.Write("1. Show the contents of the array.\n" +
                 "2. Output the name of somebody if you type in the position number.\n" +
@@ -29,9 +31,11 @@ namespace Arrays
                 }
                 else if (key == '2')
                 {
-                    int index;
+                    int index = 0;
 
-                    while (true)
+                    Boolean run = true;
+
+                    while (run)
                     {
                         Console.Write("Position: ");
                         char indexChr = Console.ReadKey().KeyChar;
@@ -40,23 +44,20 @@ namespace Arrays
                         try
                         {
                             index = int.Parse(indexChr.ToString());
-                            break;
+                            run = false;
                         }
                         catch (FormatException e)
                         {
                             Console.WriteLine("Invalid Format.");
-                            continue;
                         }
                     }
                     if (index <= names.Length-1 && index >= 0)
                     {
                         Console.WriteLine("Index Object: " + names[index]);
-                        continue;
                     }
                     else
                     {
-                        Console.WriteLine("Invalid Index..");
-                        continue;
+                        Console.WriteLine("Invalid Index.");
                     }
 
                 }
@@ -73,7 +74,6 @@ namespace Arrays
                         {
                             Console.WriteLine("Found in array.");
                             found = true;
-                            break;
                         }
                     }
                     if (!found)
@@ -81,11 +81,7 @@ namespace Arrays
                 }
                 else if (key == 'q')
                 {
-                    break;
-                }
-                else
-                {
-                    continue;
+                    running = false;
                 }
             }
         }
