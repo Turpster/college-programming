@@ -70,7 +70,7 @@ namespace Arrays
 
                     foreach(string name in names)
                     {
-                        if (String.Compare(name, targetName) == 0)
+                        if (name.Equals(targetName, StringComparison.OrdinalIgnoreCase))
                         {
                             Console.WriteLine("Found in array.");
                             found = true;
