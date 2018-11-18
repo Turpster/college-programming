@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp14
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num;
+            int num2;
+
+            //Validation loop for a number between 1 and 10
+            do
+            {
+                Console.WriteLine("Enter a num between 1 and 10");
+                try
+                {
+                    num = int.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("wrong type");
+                    num = -1;
+                }
+                if (num < 1 || num > 10)
+                {
+                    Console.WriteLine("Invalid value");
+                }
+            } while (num < 1 || num > 10);
+
+            //Validation loop for a Negative Number
+            do
+            {
+                Console.WriteLine("Enter a negative number");
+                try
+                {
+                    num = int.Parse(Console.ReadLine());
+                }
+                catch
+                {
+                    Console.WriteLine("wrong type");
+                    num = 1;
+                }
+                if (num >= 0)
+                {
+                    Console.WriteLine("Invalid value");
+                }
+            } while (num >= 0);
+
+            Console.ReadLine();
+
+        }
+    }
+}

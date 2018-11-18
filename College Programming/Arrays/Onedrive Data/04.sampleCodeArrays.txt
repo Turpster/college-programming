@@ -1,0 +1,115 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp20
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //Processing an array
+
+            int i, choice;
+            string[] animal = new string[5];
+            animal[0] = "Aardvark";
+            animal[1] = "Marmoset";
+            animal[2] = "Baboon";
+            animal[3] = "Painted Dog";
+            animal[4] = "Leemur";
+            do
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Menu");
+                Console.WriteLine("............");
+                Console.WriteLine();
+                Console.WriteLine("1> Output Array");
+                Console.WriteLine("2> Add a new animal at given position");
+                Console.WriteLine("3> Display animal with given number");
+                Console.WriteLine("4> Search for an animal");
+                Console.WriteLine("5> End");
+                Console.WriteLine();
+                Console.Write(":>");
+                choice = Convert.ToInt32(Console.ReadLine());
+
+                if (choice == 1)
+                {
+                    for (i = 0; i < animal.Length; i++)
+                    {
+
+                        Console.WriteLine("Animal number " + i + "\t" + animal[i]);
+
+                    }
+
+                }
+                else if (choice == 2)
+                {
+                    int num;
+                    string yesno;
+                    Console.WriteLine();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("What position would you like to change?");
+                    num = Convert.ToInt16(Console.ReadLine());
+                    Console.Clear();
+                    Console.WriteLine("Are you sure you want to change " + animal[num] + "?");
+                    Console.WriteLine();
+                    yesno = Console.ReadLine();
+                    if (yesno == "yes")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Cyan;
+                        Console.WriteLine("Input new animal");
+                        animal[num] = Console.ReadLine();
+
+                    }
+
+                }
+                else if (choice == 3)
+                {
+                    int num;
+                    Console.WriteLine("Enter position number");
+                    num = Convert.ToInt32(Console.ReadLine());
+                    if (num >= animal.Length)
+                    {
+                        Console.WriteLine("Invalid number");
+
+                    }
+                    else
+                    {
+                        Console.WriteLine(animal[num]);
+                    }
+                }
+                else if (choice == 4)
+                {
+                    string searchItem;
+                    bool found;
+                    int foundNum;
+
+                    Console.WriteLine("Enter item to search for: ");
+                    searchItem = Console.ReadLine();
+                    found = false;
+                    for (i = 0; i < animal.Length; i++)
+                    {
+                        if (searchItem == animal[i])
+                        {
+                            foundNum = i;
+                            found = true;
+
+                            Console.WriteLine("Animal number " + i + "\t" + animal[i]);
+                        }
+                        
+
+                    }
+                    if (found == false)
+                    {
+                        Console.WriteLine("Animal not found");
+                    }
+                }
+
+                Console.ReadLine();
+            }
+            while (choice != 5);
+        }
+    }
+}
