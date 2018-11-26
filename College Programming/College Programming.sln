@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Searching and Sorting", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary Hash", "Dictionary Hash\Dictionary Hash.csproj", "{56AB6533-6C40-40CD-ABBF-9A4BEC617040}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "Base\Base.csproj", "{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{56AB6533-6C40-40CD-ABBF-9A4BEC617040}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56AB6533-6C40-40CD-ABBF-9A4BEC617040}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56AB6533-6C40-40CD-ABBF-9A4BEC617040}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
