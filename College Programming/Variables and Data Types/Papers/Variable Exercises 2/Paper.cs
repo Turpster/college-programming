@@ -1,10 +1,10 @@
-using Executor;
+using Layout;
 using Variables_and_Data_Types.Papers.Input.Tasks;
 using TaskOne = Variables_and_Data_Types.Papers.Variable_Exercises_2.Tasks.TaskOne;
 
 namespace Variables_and_Data_Types.Papers.Variable_Exercises_2
 {
-    public class Paper : Executor.Paper
+    public class Paper : Layout.Paper
     {
         public Paper() : base( new Task[] {new TaskOne(), new TaskTwo(), new TaskThree()}, "Variable Exercises 2", 
             "For each of these programming tasks, create and test a program. For each:\n" +

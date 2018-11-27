@@ -7,6 +7,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Layout\Layout.csproj" />
+      <ProjectReference Include="..\Selection\Selection.csproj" />
       <ProjectReference Include="..\Variables and Data Types\Variables and Data Types.csproj" />
     </ItemGroup>
 
