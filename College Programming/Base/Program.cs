@@ -14,6 +14,7 @@ namespace Base
             executor.AddProject(new Iteration.Iteration());
             executor.AddProject(new Arrays.Arrays());
             executor.AddProject(new Procedures_and_Functions.ProceduresAndFunctions());
+            executor.AddProject(new Standard_Algorithms.StandardAlgorithms());
 
             executor.AskUser();
         }

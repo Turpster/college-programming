@@ -11,6 +11,7 @@
       <ProjectReference Include="..\Layout\Layout.csproj" />
       <ProjectReference Include="..\Procedures and Functions\Procedures and Functions.csproj" />
       <ProjectReference Include="..\Selection\Selection.csproj" />
+      <ProjectReference Include="..\Standard Algorithms\Standard Algorithms.csproj" />
       <ProjectReference Include="..\Variables and Data Types\Variables and Data Types.csproj" />
     </ItemGroup>
 
