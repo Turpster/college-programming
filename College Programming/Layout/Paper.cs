@@ -1,4 +1,4 @@
-namespace Layout
+namespace Executor
 {
     public abstract class Paper
     {
@@ -9,17 +9,17 @@ namespace Layout
     
         protected Paper(Task[] tasks, string title, string comments)
         {
-            this.Tasks = tasks;
-            this.Title = title;
-            this.Comments = comments;
+            Tasks = tasks;
+            Title = title;
+            Comments = comments;
         }
 
         
         protected Paper(Task[] tasks, string title)
         {
-            this.Tasks = tasks;
-            this.Title = title;
-            this.Comments = null;
+            Tasks = tasks;
+            Title = title;
+            Comments = null;
         }
     }
 }

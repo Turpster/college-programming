@@ -1,15 +1,16 @@
 using System;
 using System.Collections.Generic;
+using Executor;
 
 namespace Layout
 {
-    public class Layout
+    public class Executor
     {
-        private static List<Project> projects = new List<Project>();
+        private static readonly List<Project> Projects = new List<Project>();
         
         public static void Main(string[] args)
         {
-            new Layout();
+            new Executor();
         }
 
         private enum Selection
@@ -20,22 +21,19 @@ namespace Layout
             Quit=4
         }
         
-        public Layout()
+        public Executor()
         {
+            const string welcomeMsg = "--=== College Programming ===--\n" +
+                                      "Developer: Turpster (or Reece)\n" +
+                                      "Tutor: Darren\n" +
+                                      "\n" +
+                                      "1) Select a task to run.\n" +
+                                      "2) Run a whole project.\n" +
+                                      "3) Run all tasks from every project.\n" +
+                                      "4) Quit.\n" +
+                                      "";
             while (true)
             {
-                string welcomeMsg =
-
-                    "--=== College Programming ===--\n" +
-                    "Developer: Turpster (or Reece)\n" +
-                    "Tutor: Darren\n" +
-                    "\n" +
-                    "1) Select a task to run.\n" +
-                    "2) Run a whole project.\n" +
-                    "3) Run all tasks from every project.\n" +
-                    "4) Quit.\n" +
-                    "";
-                
                 Console.WriteLine(welcomeMsg);
                 
                 Console.Write("Selection: ");
@@ -48,12 +46,12 @@ namespace Layout
                     {
                         try
                         {
-                            project = projects[GetValidInt("Project") - 1];
+                            project = Projects[GetValidInt("Project") - 1];
                             break;
                         }
                         catch (IndexOutOfRangeException)
                         {
-                            Console.WriteLine("Please input a valid project number, 1 to {0}.", projects.Count);
+                            Console.WriteLine("Please input a valid project number, 1 to {0}.", Projects.Count);
                         }
                     }
                     
@@ -96,18 +94,19 @@ namespace Layout
                         var sel = GetValidInt("Project Number");
                         try
                         {
-                            targetProject = projects[sel - 1];
+                            targetProject = Projects[sel - 1];
                             break;
                         }
                         catch (IndexOutOfRangeException)
                         {
-                            Console.WriteLine("Project number is out of range, 1 to {0} and your selection was {1}.", projects.Count, sel);
+                            Console.WriteLine("Project number is out of range, 1 to {0} and your selection was {1}.", Projects.Count, sel);
                         }
                     }
                     
                     foreach (var paper in targetProject.Papers)
                     {
                         Console.WriteLine("--=== {0} ===--", paper.Title);
+                        if (paper.Comments != null) Console.WriteLine(paper.Comments);
                         foreach (var task in paper.Tasks)
                         {
                             Console.Write("\n\n---\n{0}\n\n", task.Question); // TODO Might of overdone the line breaks
@@ -118,7 +117,7 @@ namespace Layout
                 }
                 else if (selection == (int) Selection.RunAllTasks)
                 {
-                    foreach (Project project in projects)
+                    foreach (Project project in Projects)
                     {
                         Console.WriteLine("--=== {0} ===--", project.Title);
                         foreach (Paper paper in project.Papers)
@@ -140,6 +139,7 @@ namespace Layout
                                 catch(Exception up)
                                 {
                                     Console.WriteLine("Task is going to throw up.");
+                                    // ReSharper disable once PossibleIntendedRethrow
                                     throw up; // haha
                                 }
                             }
@@ -171,7 +171,7 @@ namespace Layout
                     task = int.Parse(Console.ReadLine());
                     break;
                 }
-                catch (FormatException e)
+                catch (FormatException)
                 {
                     Console.Write("Please input a valid number.");
                 }
@@ -182,7 +182,7 @@ namespace Layout
 
         public static void AddProject(Project project)
         {
-            projects.Add(project);
+            Projects.Add(project);
         }
     }
     

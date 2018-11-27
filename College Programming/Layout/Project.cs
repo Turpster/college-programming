@@ -1,4 +1,4 @@
-namespace Layout
+namespace Executor
 {
     public abstract class Project
     {
@@ -8,8 +8,8 @@ namespace Layout
         
         protected Project(Paper[] papers, string title)
         {
-            this.Papers = papers;
-            this.Title = title;
+            Papers = papers;
+            Title = title;
         }
     }
 }

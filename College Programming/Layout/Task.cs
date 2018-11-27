@@ -1,4 +1,4 @@
-namespace Layout
+namespace Executor
 {
     public abstract class Task
     {
@@ -8,8 +8,8 @@ namespace Layout
         
         protected Task(string question, string title)
         {
-            this.Question = question;
-            this.Title = title;
+            Question = question;
+            Title = title;
         }
         
         public abstract void Run();

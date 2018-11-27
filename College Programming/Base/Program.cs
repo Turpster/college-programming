@@ -3,12 +3,13 @@ using Variables_and_Data_Types;
 
 namespace Base
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Layout.Layout.AddProject(new VariablesAndDataTypesProject());
-            new Layout.Layout();
+            Layout.Executor.AddProject(new VariablesAndDataTypesProject());
+            new Layout.Executor();
         }
+        
     }
 }
