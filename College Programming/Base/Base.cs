@@ -117,29 +117,34 @@ namespace Base
                 }
                 else if (selection == (int) Selection.RunAllTasks)
                 {
-                    try
+                    foreach (Project project in projects)
                     {
-                        foreach (Project project in projects)
+                        Console.WriteLine("--=== {0} ===--", project.Title);
+                        foreach (Paper paper in project.Papers)
                         {
-                            Console.WriteLine("--=== {0} ===--", project.Title);
-                            foreach (Paper paper in project.Papers)
+                            Console.WriteLine("--=== {0} ===--", paper.Title);
+                            if (paper.Comments != null) Console.WriteLine(paper.Comments);
+                            foreach (Task task in paper.Tasks)
                             {
-                                Console.WriteLine("--=== {0} ===--", paper.Title);
-                                foreach (Task task in paper.Tasks)
+                                Console.Write("\n\n---\n{0}\n\n",
+                                    task.Question); // TODO Might of overdone the line breaks
+                                try
                                 {
-                                    Console.Write("\n\n---\n{0}\n\n",
-                                        task.Question); // TODO Might of overdone the line breaks
                                     task.Run();
+                                }
+                                catch (NotImplementedException)
+                                {
+                                    Console.WriteLine("Task has not yet been implemented.");
+                                }
+                                catch(Exception up)
+                                {
+                                    Console.WriteLine("Task is going to throw up.");
+                                    throw up; // haha
                                 }
                             }
                         }
-
+                        
                         Console.WriteLine("All tasks ran with no exceptions.");
-                    }
-                    catch (Exception up)
-                    {
-                        Console.WriteLine("Task is going to throw up.");
-                        throw up; // haha
                     }
                 }
                 else if (selection == (int) Selection.Quit)
