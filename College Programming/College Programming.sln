@@ -29,7 +29,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Searching and Sorting", "Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dictionary Hash", "Dictionary Hash\Dictionary Hash.csproj", "{56AB6533-6C40-40CD-ABBF-9A4BEC617040}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "Base\Base.csproj", "{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Layout", "Layout\Layout.csproj", "{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base", "Base\Base.csproj", "{BD956B87-AECA-496C-BD36-B4C31E1EB49D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACEAF774-E8EF-4144-9A6C-1E087CCAA4A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD956B87-AECA-496C-BD36-B4C31E1EB49D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD956B87-AECA-496C-BD36-B4C31E1EB49D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD956B87-AECA-496C-BD36-B4C31E1EB49D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD956B87-AECA-496C-BD36-B4C31E1EB49D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

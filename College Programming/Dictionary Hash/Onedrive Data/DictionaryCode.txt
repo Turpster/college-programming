@@ -29,7 +29,7 @@ namespace ConsoleApp16
             {
 
 
-                Console.WriteLine("Dictionary Based Encoding");
+                Console.WriteLine("Dictionary Layoutd Encoding");
                 Console.WriteLine();
                 Console.WriteLine("1:> Add to the Dictionary");
                 Console.WriteLine("2:> Display text with code");

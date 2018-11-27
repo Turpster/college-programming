@@ -1,4 +1,4 @@
-namespace Base
+namespace Layout
 {
     public abstract class Project
     {

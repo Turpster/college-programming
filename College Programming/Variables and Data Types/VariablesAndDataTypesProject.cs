@@ -1,5 +1,5 @@
 using System.Linq.Expressions;
-using Base;
+using Layout;
 namespace Variables_and_Data_Types
 {
     public class VariablesAndDataTypesProject : Project
@@ -16,5 +16,10 @@ namespace Variables_and_Data_Types
                 new Papers.Variable_Exercises_2.Paper()
             }, "Variables And Data Types") 
         {}
+
+        public static void Main(string[] args)
+        {
+            Layout.Layout.AddProject(new VariablesAndDataTypesProject());
+        }
     }
 }

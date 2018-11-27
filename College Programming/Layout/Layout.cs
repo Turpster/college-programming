@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
 
-namespace Base
+namespace Layout
 {
-    public class Base
+    public class Layout
     {
-        List<Project> projects;
+        private static List<Project> projects = new List<Project>();
         
         public static void Main(string[] args)
         {
-            new Base();
+            new Layout();
         }
 
         private enum Selection
@@ -20,26 +20,27 @@ namespace Base
             Quit=4
         }
         
-        public Base()
+        public Layout()
         {
             while (true)
             {
-                string[] welcomeMsg =
-                {
-                    "--=== College Programming ===--",
-                    "Developer: Turpster (or Reece)",
-                    "Tutor: Darren",
-                    "",
-                    "1) Select a task to run.",
-                    "2) Run a whole project.",
-                    "3) Run all tasks from every project.",
-                    "4) Quit.",
-                    ""
-                };
+                string welcomeMsg =
+
+                    "--=== College Programming ===--\n" +
+                    "Developer: Turpster (or Reece)\n" +
+                    "Tutor: Darren\n" +
+                    "\n" +
+                    "1) Select a task to run.\n" +
+                    "2) Run a whole project.\n" +
+                    "3) Run all tasks from every project.\n" +
+                    "4) Quit.\n" +
+                    "";
+                
                 Console.WriteLine(welcomeMsg);
+                
                 Console.Write("Selection: ");
                 int selection = int.Parse(Console.ReadKey().KeyChar.ToString());
-                Console.WriteLine(".\n\n");
+                Console.WriteLine(".\n");
                 if (selection == (int) Selection.SelectTask)
                 {
                     Project project;
@@ -47,7 +48,7 @@ namespace Base
                     {
                         try
                         {
-                            project = projects[GetValidInt("Project: ") - 1];
+                            project = projects[GetValidInt("Project") - 1];
                             break;
                         }
                         catch (IndexOutOfRangeException)
@@ -172,15 +173,17 @@ namespace Base
                 }
                 catch (FormatException e)
                 {
-                    Console.Write("Please input a valid number");
-                }
-                finally
-                {
-                    Console.Write(".\n");
+                    Console.Write("Please input a valid number.");
                 }
             }
 
             return task;
         }
+
+        public static void AddProject(Project project)
+        {
+            projects.Add(project);
+        }
     }
+    
 }
