@@ -6,4 +6,8 @@
         <RootNamespace>Standard_Algorithms</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Layout\Layout.csproj" />
+    </ItemGroup>
+
 </Project>
