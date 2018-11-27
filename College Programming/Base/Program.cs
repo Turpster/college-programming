@@ -1,14 +1,14 @@
 ﻿using System;
-using Variables_and_Data_Types;
-
 namespace Base
 {
     internal static class Program
     {
         private static void Main(string[] args)
         {
-            Layout.Executor.AddProject(new VariablesAndDataTypesProject());
-            Layout.Executor.AddProject(new Selection.Papers.Selection());
+            //TODO Change to add dynamically instead of statically
+            
+            Layout.Executor.AddProject(new Variables_and_Data_Types.VariablesAndDataTypesProject());
+            Layout.Executor.AddProject(new Selection.Selection());
             new Layout.Executor();
         }
         
