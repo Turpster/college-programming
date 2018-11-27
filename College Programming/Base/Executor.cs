@@ -1,17 +1,17 @@
 using System;
 using System.Collections.Generic;
+using Layout;
 
-namespace Layout
+namespace Base
 {
     public class Executor
     {
-        private static readonly List<Project> Projects = new List<Project>();
+        private readonly List<Project> Projects = new List<Project>();
         
-        public static void Main(string[] args)
+        public Executor()
         {
-            new Executor();
         }
-
+        
         private enum Selection
         {
             SelectTask=1,
@@ -19,8 +19,8 @@ namespace Layout
             RunAllTasks=3,
             Quit=4
         }
-        
-        public Executor()
+
+        public void AskUser()
         {
             const string welcomeMsg = "--=== College Programming ===--\n" +
                                       "Developer: Turpster (or Reece)\n" +
@@ -82,8 +82,7 @@ namespace Layout
                         }
                     }
                     
-                    Console.Write("\n\n---\n{0}\n\n", task.Question); // TODO Might of overdone the line breaks
-                    task.Run();
+                    RunTask(task);
                 }
                 else if (selection == (int) Selection.RunWholeProject)
                 {
@@ -108,8 +107,7 @@ namespace Layout
                         if (paper.Comments != null) Console.WriteLine(paper.Comments);
                         foreach (var task in paper.Tasks)
                         {
-                            Console.Write("\n\n---\n{0}\n\n", task.Question); // TODO Might of overdone the line breaks
-                            task.Run();
+                            RunTask(task);
                         }
                     }
 
@@ -125,26 +123,9 @@ namespace Layout
                             if (paper.Comments != null) Console.WriteLine(paper.Comments);
                             foreach (Task task in paper.Tasks)
                             {
-                                Console.Write("\n\n---\n{0}\n\n",
-                                    task.Question); // TODO Might of overdone the line breaks
-                                try
-                                {
-                                    task.Run();
-                                }
-                                catch (NotImplementedException)
-                                {
-                                    Console.WriteLine("Task has not yet been implemented.");
-                                }
-                                catch(Exception up)
-                                {
-                                    Console.WriteLine("Task is going to throw up.");
-                                    // ReSharper disable once PossibleIntendedRethrow
-                                    throw up; // haha
-                                }
+                                RunTask(task);
                             }
                         }
-                        
-                        Console.WriteLine("All tasks ran with no exceptions.");
                     }
                 }
                 else if (selection == (int) Selection.Quit)
@@ -179,7 +160,27 @@ namespace Layout
             return task;
         }
 
-        public static void AddProject(Project project)
+        private static void RunTask(Task task)
+        {
+            Console.WriteLine(": Start of {0}", task.Title);
+            try
+            {
+                task.Run();
+            }
+            catch (NotImplementedException)
+            {
+                Console.WriteLine("Task has not yet been implemented.");
+            }
+            catch(Exception up)
+            {
+                Console.WriteLine("Task is going to throw up.");
+                // ReSharper disable once PossibleIntendedRethrow
+                throw up; // haha
+            }
+            Console.WriteLine(": Task ({0}) ran successfully with no exceptions.", task.Title);
+        }
+
+        public void AddProject(Project project)
         {
             Projects.Add(project);
         }

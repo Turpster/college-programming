@@ -2,9 +2,15 @@
 
 namespace Arrays
 {
-    class Program
+    class Arrats
     {
-        static void Main(string[] args)
+        
+    }
+}
+
+
+
+        /* TODO Put code in project somewhere static void Main(string[] args)
         {
             string[] names = { "Joe" , "Jill" , "Bob" , "Sam" , "Fred" };
 
@@ -85,5 +91,4 @@ namespace Arrays
                 }
             }
         }
-    }
-}
+    */
