@@ -6,4 +6,8 @@
         <RootNamespace>Procedures_and_Functions</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Layout\Layout.csproj" />
+    </ItemGroup>
+
 </Project>

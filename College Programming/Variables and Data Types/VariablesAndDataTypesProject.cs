@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types
@@ -19,7 +20,7 @@ namespace Variables_and_Data_Types
 
         public static void Main(string[] args)
         {
-            Layout.Executor.AddProject(new VariablesAndDataTypesProject());
+            Console.WriteLine("Please run the Base project.");
         }
     }
 }

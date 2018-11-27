@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Base
 {
     internal static class Program
@@ -12,7 +13,8 @@ namespace Base
             executor.AddProject(new Selection.Selection());
             executor.AddProject(new Iteration.Iteration());
             executor.AddProject(new Arrays.Arrays());
-            
+            executor.AddProject(new Procedures_and_Functions.ProceduresAndFunctions());
+
             executor.AskUser();
         }
     }

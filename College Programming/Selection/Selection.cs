@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection
@@ -19,7 +20,7 @@ namespace Selection
 
         public static void Main(string[] args)
         {
-            Layout.Executor.AddProject(new Selection());
+            Console.WriteLine("Please run the Base project.");
         }
     }
 }

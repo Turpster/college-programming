@@ -1,6 +1,7 @@
+using System;
 using Layout;
 
-namespace Iteration.Papers
+namespace Iteration
 {
     public class Iteration : Layout.Project
     {
@@ -14,7 +15,10 @@ namespace Iteration.Papers
                 new Papers.StringFunctionsOne.Paper(), 
                 new Papers.StringFunctionsTwo.Paper(), 
                 new Papers.UpperLowerTitleCase.Paper()
-            }, "Selection") 
-        {}
+            }, "Iteration") {}
+        public static void Main(string[] args)
+        {
+            Console.WriteLine("Please run the Base project.");
+        }
     }
 }
