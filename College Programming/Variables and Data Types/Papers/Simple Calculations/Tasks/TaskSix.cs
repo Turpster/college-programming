@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
@@ -12,7 +13,9 @@ namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
 
         public override void Run()
         {
+            int numCalls = Utils.AskUserInteger("Number of Calls");
             
+            Console.WriteLine("Phone Bill equates to £{0}.", 0.10 * numCalls);
         }
         
     }

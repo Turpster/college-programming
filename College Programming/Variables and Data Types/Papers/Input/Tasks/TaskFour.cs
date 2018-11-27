@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Input.Tasks
@@ -12,8 +13,14 @@ namespace Variables_and_Data_Types.Papers.Input.Tasks
 
         public override void Run()
         {
+            Console.Write("Platform: ");
+            string platform = Console.ReadLine();
             
+            Console.Write("Time: ");
+            string time = Console.ReadLine();
+            Console.Write("{0} wish to announce that\n" +
+                          "the coastal express will depart from platform\n" +
+                          "2 at {1}", platform, time);
         }
-        
     }
 }

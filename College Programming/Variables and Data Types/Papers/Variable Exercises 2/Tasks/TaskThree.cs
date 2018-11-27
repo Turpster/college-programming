@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Variable_Exercises_2.Tasks
@@ -15,7 +16,15 @@ namespace Variables_and_Data_Types.Papers.Variable_Exercises_2.Tasks
 
         public override void Run()
         {
+            DateTime startDateTime = Utils.AskUserDateTime("When did you start your journey");
+            DateTime endDateTime = Utils.AskUserDateTime("When did your journey end");
+            TimeSpan totalTime = endDateTime - startDateTime;
             
+            Console.Write("You started at {0:d} and ended at {1:d}, you were out there for {2} hours, {3} " +
+                              "minutes and {4} seconds", startDateTime, endDateTime, totalTime.TotalHours, 
+                totalTime.Minutes, totalTime.Seconds);
+
+            Console.Write(totalTime.TotalHours >= 2 ? "!" : "."); 
         }
         
     }

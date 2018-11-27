@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Random_Number.Tasks
@@ -11,8 +12,9 @@ namespace Variables_and_Data_Types.Papers.Random_Number.Tasks
 
         public override void Run()
         {
+            Random r = new Random();
             
+            Console.WriteLine("Random number is {0:0.00}.", r.NextDouble() * Double.MaxValue);
         }
-        
     }
 }

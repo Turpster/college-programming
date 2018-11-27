@@ -173,7 +173,7 @@ namespace Base
             }
             catch(Exception up)
             {
-                Console.WriteLine("Task is going to throw up.");
+                Console.WriteLine("Task is going to throw up.\n{0}", up);
                 // ReSharper disable once PossibleIntendedRethrow
                 throw up; // haha
             }

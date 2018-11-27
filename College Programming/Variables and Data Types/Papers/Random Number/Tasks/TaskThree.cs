@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Random_Number.Tasks
@@ -11,8 +12,9 @@ namespace Variables_and_Data_Types.Papers.Random_Number.Tasks
 
         public override void Run()
         {
-            
+            var r = new Random();
+            Console.WriteLine("Real: {0:0.000}", r.NextDouble() * Double.MaxValue);
+            Console.WriteLine("Real: {0}", r.Next(25));
         }
-        
     }
 }

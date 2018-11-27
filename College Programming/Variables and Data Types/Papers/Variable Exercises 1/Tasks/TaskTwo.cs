@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Variable_Exercises_1.Tasks
@@ -17,7 +18,17 @@ namespace Variables_and_Data_Types.Papers.Variable_Exercises_1.Tasks
 
         public override void Run()
         {
+            string pc = Utils.AskUserString("P/C");
+            string desc = Utils.AskUserString("Desc");
+            int price = Utils.AskUserInteger("Desc");
+            int quantity = Utils.AskUserInteger("Desc");
+            int total = price * quantity;
             
+            Console.WriteLine("P/C:   {0}\n" +
+                              "Desc:  {1}\n" +
+                              "U/Prc: £{2}\n" +
+                              "Qty:   {3}\n" +
+                              "Total: £{4}", pc, desc, price, quantity, total);
         }
         
     }

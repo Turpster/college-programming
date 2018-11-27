@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
@@ -11,7 +12,11 @@ namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
 
         public override void Run()
         {
+            double width = Utils.AskUserDouble("Please enter width");
+            double height = Utils.AskUserDouble("Please enter height");
             
+            Console.WriteLine("Area: {0}\n" +
+                              "Perimeter: {1}", width * height, (width*2) + (height*2));
         }
         
     }

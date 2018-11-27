@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
@@ -14,7 +15,12 @@ namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
 
         public override void Run()
         {
-            
+            double r = Utils.AskUserDouble("Please enter the radius of the circle");
+            Console.WriteLine("Area of circle: {0}\n" +
+                              "Circumference of circle: {1}", 
+                Math.PI * Math.Pow(r, 2),
+                2 * Math.PI * r
+                );
         }
         
     }

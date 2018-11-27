@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Variables_and_Data_Types.Papers.Input.Tasks
@@ -11,7 +12,8 @@ namespace Variables_and_Data_Types.Papers.Input.Tasks
 
         public override void Run()
         {
-            
+            Console.Write("Name: ");
+            Console.WriteLine("Hello {0}!", Console.ReadLine());
         }
         
     }
