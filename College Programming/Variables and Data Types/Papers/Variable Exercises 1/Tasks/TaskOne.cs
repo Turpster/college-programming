@@ -14,8 +14,8 @@ namespace Variables_and_Data_Types.Papers.Variable_Exercises_1.Tasks
 
         public override void Run()
         {
-            string name = Utils.AskUserString("Name: ");
-            int yearOfBirth = Utils.AskUserInteger("Year: ");
+            string name = Utils.AskUserString("Name");
+            int yearOfBirth = Utils.AskUserInteger("Year");
             Console.WriteLine("Hi {0}, you will be {1} yrs old next year", name, yearOfBirth);
         }
         

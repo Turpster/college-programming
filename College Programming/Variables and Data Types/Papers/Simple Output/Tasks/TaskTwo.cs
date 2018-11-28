@@ -13,7 +13,7 @@ namespace Variables_and_Data_Types.Papers.Simple_Output.Tasks
         {
             var oldColor = new ConsoleColor[] {Console.ForegroundColor, Console.BackgroundColor};
             
-            string name = Utils.AskUserString("Name: ");
+            string name = Utils.AskUserString("Name");
             Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.BackgroundColor = ConsoleColor.White;
             Console.WriteLine(name);

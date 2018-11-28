@@ -13,8 +13,8 @@ namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
 
         public override void Run()
         {
-            double height = Utils.AskUserDouble("Please enter the height of the triangle: ");
-            double width = Utils.AskUserDouble("Please enter the width of the base of the triangle: ");
+            double height = Utils.AskUserDouble("Please enter the height of the triangle");
+            double width = Utils.AskUserDouble("Please enter the width of the base of the triangle");
             
             Console.WriteLine("Area of Triangle: {0}", (height * width) / 2);
         }

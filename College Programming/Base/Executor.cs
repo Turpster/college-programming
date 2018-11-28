@@ -59,7 +59,7 @@ namespace Base
                     {
                         try
                         {
-                            paper = project.Papers[GetValidInt("Project: ") - 1];
+                            paper = project.Papers[GetValidInt("Paper") - 1];
                             break;
                         }
                         catch (IndexOutOfRangeException)
@@ -73,7 +73,7 @@ namespace Base
                     {
                         try
                         {
-                            task = paper.Tasks[GetValidInt("Task: ") - 1];
+                            task = paper.Tasks[GetValidInt("Task") - 1];
                             break;
                         }
                         catch (IndexOutOfRangeException)
@@ -153,7 +153,7 @@ namespace Base
                 }
                 catch (FormatException)
                 {
-                    Console.Write("Please input a valid number.");
+                    Console.WriteLine("Please input a valid number.");
                 }
             }
 
