@@ -13,8 +13,8 @@ namespace Variables_and_Data_Types.Papers.Random_Number.Tasks
         public override void Run()
         {
             var r = new Random();
-            Console.WriteLine("Real: {0:0.000}", r.NextDouble() * Double.MaxValue);
-            Console.WriteLine("Real: {0}", r.Next(25));
+            Console.WriteLine("Real (Probably going to be a big one): {0:0.000}", r.NextDouble() * Double.MaxValue);
+            Console.WriteLine("Integer: {0}", r.Next(25));
         }
     }
 }

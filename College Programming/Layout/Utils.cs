@@ -8,51 +8,52 @@ namespace Layout
     {
         public static DateTime AskUserTime(string demand = "Input a time")
         {
+            demand += " (h:mm:ss tt eg. 7:25:10 pm)";
             while (true)
             {
-                string date = AskUserString(demand += " (h:mm:ss tt eg. 7:25:10 pm)");
                 try
                 {
+                    string date = AskUserString(demand);
                     return DateTime.ParseExact(date, "h:mm:ss tt", CultureInfo.InvariantCulture);
                 }
                 catch (FormatException)
                 {
                     Console.WriteLine("Invalid format, make sure you are using a valid date format.");
-                    throw;
                 }
             }   
         }
 
         public static DateTime AskUserDateTime(string demand = "Input a datetime")
         {
+            demand += " (dd/MM/yyyy h:mm:ss tt eg. 21/10/2001 7:25:10 am)";
+            
             while (true)
             {
-                string date = AskUserString(demand += " (dd/MM/yyyy h:mm:ss tt eg. 21/10/2001 7:25:10 am)"); // my birthday ^-^
                 try
                 {
+                    string date = AskUserString(demand); // my birthday ^-^
                     return DateTime.ParseExact(date, "dd/MM/yyyy h:mm:ss tt", CultureInfo.InvariantCulture);
                 }
                 catch (FormatException)
                 {
                     Console.WriteLine("Invalid format, make sure you are using a valid date format.");
-                    throw;
                 }
             }
         }
         
         public static DateTime AskUserDate(string demand = "Input a date")
         {
+            demand += " (DD/MM/YYYY)";
             while (true)
             {
-                string date = AskUserString(demand += " (DD/MM/YYYY)");
                 try
                 {
+                    string date = AskUserString(demand);
                     return DateTime.Parse(date);
                 }
                 catch (FormatException)
                 {
                     Console.WriteLine("Invalid format, make sure you are using a valid date format.");
-                    throw;
                 }
             }   
         }

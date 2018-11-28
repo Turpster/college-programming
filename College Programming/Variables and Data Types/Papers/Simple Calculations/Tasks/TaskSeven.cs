@@ -14,7 +14,7 @@ namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
         {
             int portions = Utils.AskUserInteger("Please enter how many portions have been sold");
             
-            Console.WriteLine("that equates to £{0}.", portions * 4.25);
+            Console.WriteLine("that equates to £{0:0.00}.", portions * 4.25);
         }
     }
 }

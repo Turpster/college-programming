@@ -13,7 +13,7 @@ namespace Variables_and_Data_Types.Papers.Simple_Calculations.Tasks
         public override void Run()
         {
             double side = Utils.AskUserDouble("Please enter the size of one side of the square");
-            Console.WriteLine("Area of Square: ", side*2);
+            Console.WriteLine("Area of Square: {0}", side*2);
         }
         
     }

@@ -21,11 +21,10 @@ namespace Variables_and_Data_Types.Papers.Variable_Exercises_2.Tasks
             TimeSpan totalTime = endDateTime - startDateTime;
             
             Console.Write("You started at {0:d} and ended at {1:d}, you were out there for {2} hours, {3} " +
-                              "minutes and {4} seconds", startDateTime, endDateTime, totalTime.TotalHours, 
+                              "minutes and {4} seconds", startDateTime, endDateTime, Math.Floor(totalTime.TotalHours), 
                 totalTime.Minutes, totalTime.Seconds);
 
-            Console.Write(totalTime.TotalHours >= 2 ? "!" : "."); 
-        }
-        
+            Console.WriteLine(totalTime.TotalHours >= 2 ? "!" : "."); 
+        }        
     }
 }

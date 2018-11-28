@@ -20,10 +20,10 @@ namespace Variables_and_Data_Types.Papers.Variable_Exercises_2.Tasks
         public override void Run()
         {
             int numOfClubMembersTravelling = Utils.AskUserInteger("Club Members travelling");
-            int seatingCapacityOfCoach = Utils.AskUserInteger("The Seating capacity of each coach.");
+            int seatingCapacityOfCoach = Utils.AskUserInteger("The Seating capacity of each coach");
             
-            Console.WriteLine("{0} are full\n" +
-                              "{1} is the seating capacity of the first coach", 
+            Console.WriteLine("{0} full\n" +
+                              "{1} is the seating capacity of the last coach", 
                 Math.Floor((double) numOfClubMembersTravelling / seatingCapacityOfCoach), 
                 numOfClubMembersTravelling % seatingCapacityOfCoach);
         }

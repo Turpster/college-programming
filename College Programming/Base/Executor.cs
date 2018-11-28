@@ -35,9 +35,8 @@ namespace Base
             {
                 Console.WriteLine(welcomeMsg);
                 
-                Console.Write("Selection: ");
-                int selection = int.Parse(Console.ReadKey().KeyChar.ToString());
-                Console.WriteLine(".\n");
+                int selection = Utils.AskUserInteger("Selection");
+                
                 if (selection == (int) Selection.SelectTask)
                 {
                     Project project;

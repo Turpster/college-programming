@@ -14,7 +14,7 @@ namespace Variables_and_Data_Types.Papers.Random_Number.Tasks
         {
             Random r = new Random();
             
-            Console.WriteLine("Random number is {0:0.00}.", r.NextDouble() * Double.MaxValue);
+            Console.WriteLine("Random number is (Probably going to be a big one) {0:0.00}.", r.NextDouble() * Double.MaxValue);
         }
     }
 }

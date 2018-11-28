@@ -20,9 +20,9 @@ namespace Variables_and_Data_Types.Papers.Variable_Exercises_1.Tasks
         {
             string pc = Utils.AskUserString("P/C");
             string desc = Utils.AskUserString("Desc");
-            int price = Utils.AskUserInteger("Desc");
-            int quantity = Utils.AskUserInteger("Desc");
-            int total = price * quantity;
+            double price = Utils.AskUserDouble("Price");
+            int quantity = Utils.AskUserInteger("Quantity");
+            double total = price * quantity;
             
             Console.WriteLine("P/C:   {0}\n" +
                               "Desc:  {1}\n" +

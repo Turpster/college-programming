@@ -1,6 +1,5 @@
 using Layout;
-using Variables_and_Data_Types.Papers.Input.Tasks;
-using TaskOne = Variables_and_Data_Types.Papers.Variable_Exercises_2.Tasks.TaskOne;
+using Variables_and_Data_Types.Papers.Variable_Exercises_2.Tasks;
 
 namespace Variables_and_Data_Types.Papers.Variable_Exercises_2
 {

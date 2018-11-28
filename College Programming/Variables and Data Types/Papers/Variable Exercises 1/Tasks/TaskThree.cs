@@ -15,8 +15,8 @@ namespace Variables_and_Data_Types.Papers.Variable_Exercises_1.Tasks
         {
             string pc = Utils.AskUserString("P/C");
             string desc = Utils.AskUserString("Desc");
-            double price = Utils.AskUserDouble("Desc");
-            int quantity = Utils.AskUserInteger("Desc");
+            double price = Utils.AskUserDouble("Price");
+            int quantity = Utils.AskUserInteger("Quantity");
             double total = price * quantity;
             
             Console.WriteLine("P/C:   {0}\n" +
@@ -29,11 +29,11 @@ namespace Variables_and_Data_Types.Papers.Variable_Exercises_1.Tasks
 
             if (amountGiven < total)
             {
-                Console.WriteLine("You have spent {0} and the product is {1}. You need to pay more.", amountGiven, total);
+                Console.WriteLine("You have spent £{0:0.00} and the product is £{1:0.00}. You need to pay more.", amountGiven, total);
             }
             else
             {
-                Console.WriteLine("You have {0} change.", amountGiven - total);
+                Console.WriteLine("You have £{0:0.00} change.", amountGiven - total);
             }
         }
         
