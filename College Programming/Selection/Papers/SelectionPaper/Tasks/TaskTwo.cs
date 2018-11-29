@@ -11,7 +11,8 @@ namespace Selection.Papers.SelectionPaper.Tasks
                                       "- If a value is entered which is smaller than the minimum then the minimum " +
                                       "should be used instead. Likewise for the maximum.\n" +
                                       "- Some indication should be given to the user that minimum or maximum values " +
-                                      "have been used.",
+                                      "have been used.\n" +
+                                "~ Turpster: There is no solution in \"Assessment 1\", skipping task.",
             "Assessment 1 - Simple Validation")
         {
         }

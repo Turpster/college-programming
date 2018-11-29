@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.SelectionPaper.Tasks
@@ -13,7 +14,20 @@ namespace Selection.Papers.SelectionPaper.Tasks
 
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            bool running = true;
+            
+            string[] nameSplit = new string[2];
+            while (running)
+            {
+                nameSplit = Utils.AskUserString("Full name (lastname,firstname)").Split(',');
+                if (nameSplit.Length != 2)
+                {
+                    Console.WriteLine("Incorrect format, (lastname,firstname)");
+                }
+                else running = false;
+            }
+            
+            Console.WriteLine("Hello {0}. Your surname is {1} characters long.", nameSplit[0], nameSplit[1].Length);
         }
     }
 }

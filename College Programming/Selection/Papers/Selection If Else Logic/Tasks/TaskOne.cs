@@ -1,3 +1,5 @@
+using System;
+using System.Threading;
 using Layout;
 
 namespace Selection.Papers.Selection_If_Else_Logic.Tasks
@@ -17,11 +19,33 @@ namespace Selection.Papers.Selection_If_Else_Logic.Tasks
                                 "  Above 70 is an A\n" +
                                 
                                 "TMG can be entered as a single grade D – A", 
-            "Task One") {}
-        
+            "Task One") {} 
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            string name = Utils.AskUserString("Name");
+            Grade.GradeType grade;
+            Grade.GradeType targetGrade;
+            grade = Grade.ToGrade(Utils.AskUserInteger("Exam Marks"));
+            try
+            {
+                targetGrade = Grade.ToGrade(Utils.AskUserChar("Target Grade"));
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid Grade (U|D|C|B|A)");
+                Run(); return;
+            }
+
+            if (targetGrade == Grade.GradeType.E)
+            {
+                Console.WriteLine("You cannot enter an E grade");
+                Run(); return;
+            }
+
+            Console.WriteLine("{0}, you achieved a {1} in your recent test which is "
+                              + (grade == targetGrade ? "equal" : (int) grade > (int) targetGrade ? "better" : "worse") + 
+                              " than your TMG of a {2}.", name, Grade.ToChar(grade), Grade.ToChar(targetGrade));
+            
         }
     }
 }

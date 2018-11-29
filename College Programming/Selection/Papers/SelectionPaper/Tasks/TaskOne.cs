@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.SelectionPaper.Tasks
@@ -9,7 +10,9 @@ namespace Selection.Papers.SelectionPaper.Tasks
 
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            string password = Utils.AskUserString("Password");
+
+            Console.WriteLine(password == "TotallySecurePassword123" ? "Access Granted" : "Access Denied");
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.Selection_If_Else_Logic.Tasks
@@ -12,7 +13,18 @@ namespace Selection.Papers.Selection_If_Else_Logic.Tasks
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            int weeklyMillage = Utils.AskUserInteger("Weekly Mileage");
+            int engineSize = Utils.AskUserInteger("Engine Size");
+            string fuelType = Utils.AskUserString("Fuel Type");
+
+            bool overnightStay = Utils.AskUserBoolean("Overnight Stay");
+            
+            int allowanceInPennies = weeklyMillage * ((fuelType.Equals("Diesel", StringComparison.OrdinalIgnoreCase) ? 3 : 0) + (engineSize > 1500 ? engineSize > 2000 ? 60 : 50 : 40));            
+            
+            Console.WriteLine("You will get paid £{0:0.00} per mile.", (double) allowanceInPennies / 100);
+            
+            Console.WriteLine(overnightStay ? "You will get paid £65 per night for the first 2 nights" : "If you stay 3 or more nights you will only get paid £40 for each night over this");
+
         }
     }
 }

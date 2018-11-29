@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.SelectionPaper.Tasks
@@ -12,7 +13,8 @@ namespace Selection.Papers.SelectionPaper.Tasks
 
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            char chr = Utils.AskUserChar("Char");
+            Console.WriteLine((char) (chr + (chr < 95 ? +32 : -32))); // 32 is the difference between upper and lower case characters
         }
     }
 }

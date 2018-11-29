@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.SelectionPaper.Tasks
@@ -19,7 +20,16 @@ namespace Selection.Papers.SelectionPaper.Tasks
 
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            ExpressionParser expParser = new ExpressionParser();
+            try
+            {
+                Console.WriteLine("Value is {0}.", expParser.Eval(Utils.AskUserString("Enter expression (eg. 4+2/3)")));
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("That is an invalid expression.");
+                Run();
+            }
         }
     }
 }

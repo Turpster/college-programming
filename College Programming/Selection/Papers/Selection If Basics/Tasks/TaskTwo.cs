@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.Selection_If_Basics.Tasks
@@ -14,7 +15,29 @@ namespace Selection.Papers.Selection_If_Basics.Tasks
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            int targetNum = Utils.AskUserInteger("Number");
+
+            if (targetNum <= 1)
+            {
+                Console.WriteLine("Number is Less than or equal to One");
+                if (targetNum == 0)
+                {
+                    Console.WriteLine("Number is equal to Zero");
+                }
+            }
+            else 
+            {
+                Console.WriteLine("Number is not equal to Zero");
+
+                if (targetNum >= 1 && targetNum <= 20)
+                {
+                    Console.WriteLine("Number is between 1 and 20 inclusively");
+                    if (targetNum > 10)
+                    {
+                        Console.WriteLine("Number is greater than 10");
+                    }
+                }
+            }
         }
     }
 }

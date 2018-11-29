@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.Selection_If_Else.Tasks
@@ -11,7 +12,15 @@ namespace Selection.Papers.Selection_If_Else.Tasks
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            int[] nums = { Utils.AskUserInteger("Number 1"), Utils.AskUserInteger("Number 2") };
+            if (nums[0] == nums[1])
+            {
+                Console.WriteLine("Both are equal.");
+            }
+            else
+            {
+                Console.WriteLine(nums[0] > nums[1] ? "Number 1 is bigger than Number 2" : "Number 2 is bigger than Number 1");
+            }
         }
     }
 }

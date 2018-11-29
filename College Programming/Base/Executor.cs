@@ -161,7 +161,7 @@ namespace Base
 
         private static void RunTask(Task task)
         {
-            Console.WriteLine(": Start of {0}", task.Title);
+            Console.WriteLine(": Start of {0}\n\n{1}\n---", task.Title, task.Question);
             try
             {
                 task.Run();
@@ -170,13 +170,22 @@ namespace Base
             {
                 Console.WriteLine("Task has not yet been implemented.");
             }
-            catch(Exception up)
+            catch (Exception up)
             {
                 Console.WriteLine("Task is going to throw up.\n{0}", up);
                 // ReSharper disable once PossibleIntendedRethrow
                 throw up; // haha
             }
-            Console.WriteLine(": Task ({0}) ran successfully with no exceptions.", task.Title);
+
+            Console.WriteLine(": Task ({0}) ran successfully with no exceptions.\n" +
+                              "Press Y to rerun or any other key to continue...", task.Title);
+
+            if (String.Equals(Console.ReadKey().KeyChar.ToString(), "Y", StringComparison.InvariantCultureIgnoreCase))
+            {
+                Console.Write("\n");
+                RunTask(task);
+            }
+            Console.Write("\n");
         }
 
         public void AddProject(Project project)

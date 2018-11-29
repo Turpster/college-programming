@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.Selection_If_Else_Logic.Tasks
@@ -12,10 +13,15 @@ namespace Selection.Papers.Selection_If_Else_Logic.Tasks
                                   "- The sales person will get paid 50p per mile for a car with over 1500CC engine\n" +
                                   "- If the car is Diesel they will get paid an additional 3p per mile", 
             "Task Three") {}
-        
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            int weeklyMillage = Utils.AskUserInteger("Weekly Mileage");
+            int engineSize = Utils.AskUserInteger("Engine Size"); 
+            string fuelType = Utils.AskUserString("Fuel Type"); 
+
+            int allowanceInPennies = weeklyMillage * ((fuelType.Equals("Diesel", StringComparison.OrdinalIgnoreCase) ? 3 : 0) + (engineSize > 1500 ? 50 : 40));            
+            
+            Console.WriteLine("You will get paid £{0:0.00} per mile.", (double) allowanceInPennies / 100);
         }
     }
 }

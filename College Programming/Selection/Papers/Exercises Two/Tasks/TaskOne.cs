@@ -1,3 +1,5 @@
+using System;
+using System.Data;
 using Layout;
 
 namespace Selection.Papers.Exercises_Two.Tasks
@@ -5,12 +7,12 @@ namespace Selection.Papers.Exercises_Two.Tasks
     public class TaskOne : Task
     {
         public TaskOne() : base("Produce a program to accept a date from a person:\n" +
-                                "   Enter Day\n" +
-                                "   Enter Month\n" +
-                                "   Enter year" + 
+                                "  - Enter Day\n" +
+                                "  - Enter Month\n" +
+                                "  - Enter year\n" + 
                                 "Using the skills that you have learnt with If Statements and Switch statements make " +
                                 "a program that will do the following:" +
-                                "Output the date in the form: 	23rd October 2006, 14th July 2008, \n" +
+                                "Output the date in the form: 23rd October 2006, 14th July 2008, \n" +
                                 "1st November 2007\n" + 
                                 "To achieve this" + 
                                 "- Use a SWITCH statement to determine the month name\n" +
@@ -24,9 +26,29 @@ namespace Selection.Papers.Exercises_Two.Tasks
                                 "- Test your programme thoroughly with a variety of suitable inputs.",
             "Paper Task") {}
 
+        string GetDaySuffix(int day)
+        {
+            switch (day)
+            {
+                case 1:
+                case 21:
+                case 31:
+                    return "st";
+                case 2:
+                case 22:
+                    return "nd";
+                case 3:
+                case 23:
+                    return "rd";
+                default:
+                    return "th";
+            }
+        }
+        
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            DateTime date = Utils.AskUserDate("Date");
+            Console.WriteLine("Date: {0}{1} {2:MMMM yyyy}", date.Day, GetDaySuffix(date.Day), date);
         }
     }
 }

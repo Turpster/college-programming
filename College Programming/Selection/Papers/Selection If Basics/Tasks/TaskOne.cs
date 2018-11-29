@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.Selection_If_Basics.Tasks
@@ -10,7 +11,11 @@ namespace Selection.Papers.Selection_If_Basics.Tasks
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            int number = Utils.AskUserInteger("Enter a number");
+            
+            if (number > 0) Console.WriteLine("That is a positive number");
+            else if (number == 0) Console.WriteLine("It is both a positive and negative number");
+            else Console.WriteLine("That is not a positive number");
         }
     }
 }

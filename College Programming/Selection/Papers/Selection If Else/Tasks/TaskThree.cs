@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.Selection_If_Else.Tasks
@@ -14,7 +15,19 @@ namespace Selection.Papers.Selection_If_Else.Tasks
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            int[] nums = { Utils.AskUserInteger("Home"), Utils.AskUserInteger("Away") };
+            if (nums[0] + nums[1] == 0)
+            {
+                Console.WriteLine("No Score Draw");
+            }
+            else if (nums[0] == nums[1])
+            {
+                Console.WriteLine("Score Draw");
+            }
+            else
+            {
+                Console.WriteLine(nums[0] > nums[1] ? "Home Win" : "Away Win");
+            }
         }
     }
 }

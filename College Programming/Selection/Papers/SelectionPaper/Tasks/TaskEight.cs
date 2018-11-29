@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Selection.Papers.SelectionPaper.Tasks
@@ -19,7 +20,8 @@ namespace Selection.Papers.SelectionPaper.Tasks
 
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("Re-Running Task Seven as it supports same functionality already");
+            new TaskSeven().Run();
         }
     }
 }
