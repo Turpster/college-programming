@@ -16,8 +16,7 @@ namespace Variables_and_Data_Types.Papers.Input.Tasks
 
         public override void Run()
         {
-            Console.Write("Time: ");
-            string time = Console.ReadLine();
+            string time = Utils.AskUserString("Time");
             Console.Write("Cleethorpes Railway wish to announce that\n" +
                           "the coastal express will depart from platform\n" +
                           "2 at {0}", time);

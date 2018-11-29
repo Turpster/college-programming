@@ -12,10 +12,8 @@ namespace Variables_and_Data_Types.Papers.Input.Tasks
 
         public override void Run()
         {
-            Console.Write("Name");
-            string name = Console.ReadLine();
-            Console.Write("Birthday");
-            string birthday = Console.ReadLine();
+            string name = Utils.AskUserString("Name");
+            string birthday = Utils.AskUserString("Birthday");
 
             Console.WriteLine("Hello {0}, your birthday is {1}.", name, birthday);
         }
