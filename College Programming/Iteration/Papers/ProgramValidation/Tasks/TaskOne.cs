@@ -63,27 +63,27 @@ namespace Iteration.Papers.ProgramValidation.Tasks
             int courseWorkMarkPercentage = courseWorkMark / 75;
             int examMarkPercentage = examMark / 75;
 
-            int average = (courseWorkMarkPercentage * examMarkPercentage) / 2;
+            int average = courseWorkMarkPercentage * examMarkPercentage / 2;
             
             Grade.GradeType grade;
 
-            if (average < 40)
+            if (average < 40/100)
             {
                 grade = Grade.GradeType.U;
             }
-            else if (average < 50)
+            else if (average < 50/100)
             {
                 grade = Grade.GradeType.E;
             }
-            else if (average < 60)
+            else if (average < 60/100)
             {
                 grade = Grade.GradeType.D;
             }
-            else if (average < 70)
+            else if (average < 70/100)
             {
                 grade = Grade.GradeType.C;
             }
-            else if (average < 85)
+            else if (average < 85/100)
             {
                 grade = Grade.GradeType.B;
             }

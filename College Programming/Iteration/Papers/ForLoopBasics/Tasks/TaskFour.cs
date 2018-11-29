@@ -18,14 +18,14 @@ namespace Iteration.Papers.ForLoopBasics.Tasks
 
         public override void Run()
         {   
-            int[] nums = new int[10];
+            double[] nums = new double[10];
             
-            for (int i = 1; i <= 10; i++)
+            for (int i = 0; i < 10; i++)
             {
-                nums[i] = Utils.AskUserInteger("Value");
+                nums[i] = Utils.AskUserDouble("Value");
             }
             
-            Console.Write("Sum: {0}.", nums.Sum());
+            Console.WriteLine("Sum: {0}.", nums.Sum());
         }
     }
 }

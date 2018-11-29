@@ -47,9 +47,12 @@ namespace Iteration.Papers.ForLoopBasics.Tasks
             }
             else if (selection == 2)
             {
-                for (int i = 65; i <= 90; i++)
+                char excludedChar = Utils.AskUserChar("Character you want to exclude");
+                
+                for (char i = 'A'; i <= 'Z'; i++)
                 {
-                    Console.WriteLine((char) i);
+                    if (excludedChar != i)
+                        Console.WriteLine(i);
                 }
             }
             else if (selection == 3)
@@ -58,11 +61,9 @@ namespace Iteration.Papers.ForLoopBasics.Tasks
                 int end = Utils.AskUserInteger("End");
                 int interval = Utils.AskUserInteger("interval");
 
-                for (; start < end; start += interval)
+                for (; start < end - interval; start += interval)
                 {
-                    Console.Write(start);
-                    if (start != end) Console.Write(", ");
-                    else Console.Write(".\n");
+                    Console.WriteLine(start);
                 }
             }
             else if (selection == 4)
@@ -70,11 +71,9 @@ namespace Iteration.Papers.ForLoopBasics.Tasks
                 // Hmm, As of 3 but counting down a series of numbers?
                 // I'll take that as start from 3 and count down a series of numbers.
                 
-                for (int i = 3; i <= -27; i--)
+                for (int i = 3; i >= -27; i--)
                 {
-                    Console.Write(i);
-                    if (i != -27) Console.Write(", ");
-                    else Console.Write(".\n");
+                    Console.WriteLine(i);
                 }
             }
             else

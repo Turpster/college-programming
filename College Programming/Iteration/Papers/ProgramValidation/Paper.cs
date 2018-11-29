@@ -5,6 +5,6 @@ namespace Iteration.Papers.ProgramValidation
 {
     public class Paper : Layout.Paper
     {
-        public Paper() : base(new Task[]{new TaskOne()}, "Validation & Selection") {}
+        public Paper() : base(new Task[]{new TaskOne()}, "Program Validation") {}
     }
 }

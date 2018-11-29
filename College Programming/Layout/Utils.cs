@@ -82,7 +82,7 @@ namespace Layout
         public static string[] AskUserNameAndSurname(string demand = "Full name (lastname,firstname)")
         {
             string[] nameSplit = new string[2];
-            nameSplit = AskUserString("").Split(',');
+            nameSplit = AskUserString(demand).Split(',');
             if (nameSplit.Length != 2)
             {
                 Console.WriteLine(demand);

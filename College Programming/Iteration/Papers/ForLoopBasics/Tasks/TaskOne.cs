@@ -38,7 +38,7 @@ namespace Iteration.Papers.ForLoopBasics.Tasks
             }
             else if (selection == 3)
             {
-                for (int i = 1; i <= 11; i++)
+                for (int i = -10; i <= 10; i++)
                 {
                     Console.WriteLine(i);
                 }

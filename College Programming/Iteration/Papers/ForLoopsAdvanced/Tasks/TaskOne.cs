@@ -38,18 +38,18 @@ namespace Iteration.Papers.ForLoopsAdvanced.Tasks
         public override void Run()
         {
             int numSalesFigures = Utils.AskUserInteger("Number of Sales Figures");
-            int[] salesInPennies = new int[numSalesFigures];
+            double[] salesInPennies = new double[numSalesFigures];
             
             for (int i = 0; i < numSalesFigures; i++)
             {
-                salesInPennies[i] = (int) Utils.AskUserDouble("Sales Figure: ") * 100;
+                salesInPennies[i] = Utils.AskUserDouble("Sales Figure");
             }
             
             Console.WriteLine(
                 "Min: £{0:0.00}.\n" +
                 "Max: £{1:0.00}.\n" +
                 "Ave: £{2:0.00}.", 
-                salesInPennies.Min() / 100, salesInPennies.Max() / 100, salesInPennies.Average() / 100);
+                salesInPennies.Min(), salesInPennies.Max(), salesInPennies.Average());
         }
     }
 }
