@@ -36,7 +36,7 @@ namespace ConsoleApp20
 
                 if (choice == 1)
                 {
-                    for (i = 0; i < animal.Length; i++)
+                    for (i = 0; I <= animal.Length; i++)
                     {
 
                         Console.WriteLine("Animal number " + i + "\t" + animal[i]);

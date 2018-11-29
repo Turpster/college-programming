@@ -10,7 +10,7 @@ namespace Selection.Papers
             E = 40,
             D = 50,
             C = 60,
-            B = 79,
+            B = 70,
             A = 80
         }
 

@@ -26,29 +26,11 @@ namespace Selection.Papers.Exercises_Two.Tasks
                                 "- Test your programme thoroughly with a variety of suitable inputs.",
             "Paper Task") {}
 
-        string GetDaySuffix(int day)
-        {
-            switch (day)
-            {
-                case 1:
-                case 21:
-                case 31:
-                    return "st";
-                case 2:
-                case 22:
-                    return "nd";
-                case 3:
-                case 23:
-                    return "rd";
-                default:
-                    return "th";
-            }
-        }
         
         public override void Run()
         {
             DateTime date = Utils.AskUserDate("Date");
-            Console.WriteLine("Date: {0}{1} {2:MMMM yyyy}", date.Day, GetDaySuffix(date.Day), date);
+            Console.WriteLine("Date: {0}{1} {2:MMMM yyyy}", date.Day, Utils.GetDaySuffix(date.Day), date);
         }
     }
 }

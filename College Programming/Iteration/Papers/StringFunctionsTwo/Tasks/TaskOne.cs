@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Iteration.Papers.StringFunctionsTwo.Tasks
@@ -24,7 +25,6 @@ namespace Iteration.Papers.StringFunctionsTwo.Tasks
             "- Ensure that if the day starts with a zero that this is removed.\n" +
             "- Check to ensure that the entered date has the correct number of characters (i.e. has been entered in the correct format of dd/mm/yyyy)\n" +
             "- Test your programme thoroughly with a variety of suitable inputs.\n" +
-            "- Test your programme thoroughly with a variety of suitable inputs.\n" +
             "\n" + 
             "Please enter a date in format dd/mm/yyyy:  18112008\n" +
             "Date is invalid." + 
@@ -35,7 +35,10 @@ namespace Iteration.Papers.StringFunctionsTwo.Tasks
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            DateTime date = Utils.AskUserDate("Date");
+            Console.WriteLine("Date: {0}{1} {2:MMMM yyyy}", date.Day, Utils.GetDaySuffix(date.Day), date);
+            
+            // haha.
         }
     }
 }

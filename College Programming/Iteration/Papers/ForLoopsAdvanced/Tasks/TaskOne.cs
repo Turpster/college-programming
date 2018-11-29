@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Layout;
 
 namespace Iteration.Papers.ForLoopsAdvanced.Tasks
@@ -35,7 +37,19 @@ namespace Iteration.Papers.ForLoopsAdvanced.Tasks
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            int numSalesFigures = Utils.AskUserInteger("Number of Sales Figures");
+            int[] salesInPennies = new int[numSalesFigures];
+            
+            for (int i = 0; i < numSalesFigures; i++)
+            {
+                salesInPennies[i] = (int) Utils.AskUserDouble("Sales Figure: ") * 100;
+            }
+            
+            Console.WriteLine(
+                "Min: £{0:0.00}.\n" +
+                "Max: £{1:0.00}.\n" +
+                "Ave: £{2:0.00}.", 
+                salesInPennies.Min() / 100, salesInPennies.Max() / 100, salesInPennies.Average() / 100);
         }
     }
 }

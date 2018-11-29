@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Layout;
 
 namespace Iteration.Papers.ForLoopBasics.Tasks
@@ -15,8 +17,15 @@ namespace Iteration.Papers.ForLoopBasics.Tasks
         }
 
         public override void Run()
-        {
-            throw new System.NotImplementedException();
+        {   
+            int[] nums = new int[10];
+            
+            for (int i = 1; i <= 10; i++)
+            {
+                nums[i] = Utils.AskUserInteger("Value");
+            }
+            
+            Console.Write("Sum: {0}.", nums.Sum());
         }
     }
 }

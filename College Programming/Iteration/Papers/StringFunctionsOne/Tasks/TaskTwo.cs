@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Iteration.Papers.StringFunctionsOne.Tasks
@@ -11,7 +12,13 @@ namespace Iteration.Papers.StringFunctionsOne.Tasks
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            string password = Utils.AskUserString("Please input a password");
+
+            if (!(password.Length >= 8 && password.Length <= 12))
+            {
+                Console.WriteLine("Password is invalid, and then loop around allowing the user to enter again.");
+                Run();
+            }
         }
     }
 }

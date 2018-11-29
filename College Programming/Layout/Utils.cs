@@ -78,6 +78,19 @@ namespace Layout
                 Console.WriteLine("Invalid Input.");
             }
         }
+
+        public static string[] AskUserNameAndSurname(string demand = "Full name (lastname,firstname)")
+        {
+            string[] nameSplit = new string[2];
+            nameSplit = AskUserString("").Split(',');
+            if (nameSplit.Length != 2)
+            {
+                Console.WriteLine(demand);
+                return AskUserNameAndSurname();
+            }
+
+            return nameSplit;
+        }
         
         public static string AskUserString(string demand = "Input")
         {
@@ -123,6 +136,25 @@ namespace Layout
                 {
                     Console.WriteLine("Invalid Number.");
                 }
+            }
+        }
+
+        public static string GetDaySuffix(int day)
+        {
+            switch (day)
+            {
+                case 1:
+                case 21:
+                case 31:
+                    return "st";
+                case 2:
+                case 22:
+                    return "nd";
+                case 3:
+                case 23:
+                    return "rd";
+                default:
+                    return "th";
             }
         }
     }
