@@ -1,3 +1,5 @@
+using System;
+using System.Reflection;
 using Layout;
 
 namespace Arrays.Papers.ArraysWorksheetOne.Tasks
@@ -35,7 +37,63 @@ namespace Arrays.Papers.ArraysWorksheetOne.Tasks
 
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("1) Output the contents of the array\n" +
+                              "2) Output the name of somebody if you type in the position number\n" +
+                              "3) Search for a name in the array\n" +
+                              "4) Exit");
+            
+            int selection = Utils.AskUserInteger("Selection");
+
+            string[] names = {"Joe", "Jill", "Bob", "Sam", "Fred"};
+            
+            if (selection == 1)
+            {
+                foreach (string name in names)
+                {
+                    Console.WriteLine(name);
+                }
+            }
+            else if (selection == 2)
+            {
+                bool chkContent = true;
+                while (chkContent)
+                {
+                    int index = Utils.AskUserInteger("Selection (0-4)");
+
+                    try
+                    {
+                        Console.WriteLine("Index: {0}.", names[selection]);
+                        chkContent = false;
+                    }
+                    catch (IndexOutOfRangeException)
+                    {
+                        Console.WriteLine("That index is out of bounds");
+                    }
+                }
+            }
+            else if (selection == 3)
+            {
+                string search = Utils.AskUserString("Search Query");
+                
+                foreach (string name in names)
+                {
+                    if (name.Equals(search, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        Console.WriteLine(name);
+                    }
+                    else if (name.Contains(search, StringComparison.InvariantCultureIgnoreCase))
+                    {
+                        Console.WriteLine(name);
+                    }
+                }
+            }
+            else if (selection == 4) Console.WriteLine("Goodbye");
+            
+            else
+            {
+                Run();
+            }
+            
         }
     }
 }

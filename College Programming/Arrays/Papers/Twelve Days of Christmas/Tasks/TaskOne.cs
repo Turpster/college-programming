@@ -1,4 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Layout;
+using Layout.Table;
 
 namespace Arrays.Papers.Twelve_Days_of_Christmas.Tasks
 {
@@ -49,7 +53,98 @@ namespace Arrays.Papers.Twelve_Days_of_Christmas.Tasks
 
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            Table table = new Table(2, 12);
+            table.AddEntries(new []
+            {
+                new KeyValuePair<Position, TableEntry>(new Position(0, 0), new FigureName(table, "Partridge in a pear tree")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 1), new FigureName(table, "Turtle Dove")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 2), new FigureName(table, "French Hen")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 3), new FigureName(table, "Calling Bird")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 4), new FigureName(table, "Gold Ring")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 5), new FigureName(table, "Geese-a-laying")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 6), new FigureName(table, "Swan-a-swimming")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 7), new FigureName(table, "Maid-a-walking")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 8), new FigureName(table, "Lady dancing")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 9), new FigureName(table, "Lord-a-leeping")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 10), new FigureName(table, "Piper Piping")), 
+                new KeyValuePair<Position, TableEntry>(new Position(0, 11), new FigureName(table, "Drummer Drumming")), 
+               
+                new KeyValuePair<Position, TableEntry>(new Position(1, 0), new CurrencyFigureEntry(table, 25)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 1), new CurrencyFigureEntry(table, 25)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 2), new CurrencyFigureEntry(table, 12)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 3), new CurrencyFigureEntry(table, 18)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 4), new CurrencyFigureEntry(table, 60)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 5), new CurrencyFigureEntry(table, 48)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 6), new CurrencyFigureEntry(table, 480)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 7), new CurrencyFigureEntry(table, 120)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 8), new CurrencyFigureEntry(table, 202)),
+                new KeyValuePair<Position, TableEntry>(new Position(1, 9), new CurrencyFigureEntry(table, 292*0.9)),
+                new KeyValuePair<Position, TableEntry>(new Position(1, 10), new CurrencyFigureEntry(table, 97.75*0.89)), 
+                new KeyValuePair<Position, TableEntry>(new Position(1, 11), new CurrencyFigureEntry(table, 205*0.88))
+            });
+            
+            Console.WriteLine("1) Output total cost of all gifts");
+            Console.WriteLine("2) Output a day you received a gift from your true love");
+            Console.WriteLine("3) Search how many of a gift have been brought");
+            Console.WriteLine("4) Quit");
+
+            int selection = Utils.AskUserInteger("Selection");
+
+            if (selection == 1)
+            {
+                double total = 0;
+
+                foreach (TableEntry tableEntry in table.GetEntriesInRow(1))
+                {
+                    if (tableEntry.GetType() == typeof(CurrencyFigureEntry))
+                    {
+                        total += ((CurrencyFigureEntry) tableEntry).Score;
+                    }
+                }
+                    
+                Console.WriteLine("Total: {0:C}", total);
+            }
+            else if (selection == 2)
+            {
+                int day = Utils.AskUserInteger("Day");
+
+                if (Enumerable.Range(1, table.Height).Contains(day))
+                {
+                    Table editedTable = table;
+                    editedTable.Height = day;
+                    for (; day <= table.Height; day++)
+                    {
+                        editedTable.TableEntries.Remove(new Position(0, day));
+                        editedTable.TableEntries.Remove(new Position(1, day));
+                    }
+                    
+                    Console.WriteLine(editedTable.GetDisplay());
+                }
+                else
+                {
+                    Console.WriteLine("Invalid day");
+                }
+            }
+            else if (selection == 3)
+            {
+                Position? position = table.SearchPositionRow(Utils.AskUserString("Search"), 0);
+                if (position.HasValue)
+                {
+                    Console.WriteLine("{0} have been sold.", position.Value.Y + 1);
+                }
+                else
+                {
+                    Console.WriteLine("Could not find that value");
+                }
+            }
+            if (selection != 4)
+            {
+                Run();
+            }
+            else
+            {
+                Console.WriteLine("Merry Christmas");
+            }
         }
     }
 }

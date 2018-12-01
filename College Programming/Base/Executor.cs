@@ -170,12 +170,12 @@ namespace Base
             {
                 Console.WriteLine("Task has not yet been implemented.");
             }
-            catch (Exception up)
-            {
-                Console.WriteLine("Task is going to throw up.\n{0}", up);
-                // ReSharper disable once PossibleIntendedRethrow
-                throw up; // haha
-            }
+//            catch (Exception up)
+//            {
+//                Console.WriteLine("Task is going to throw up.\n{0}", up);
+//                // ReSharper disable once PossibleIntendedRethrow
+//                throw up; // haha
+//            }
 
             Console.WriteLine(": Task ({0}) ran successfully with no exceptions.\n" +
                               "Press Y to rerun or any other key to continue...", task.Title);

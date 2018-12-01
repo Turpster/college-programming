@@ -1,22 +1,21 @@
+using System;
 using Layout;
 
 namespace Arrays.Papers.ArraysWorksheetThree.Tasks
 {
     public class TaskTwo : Task
     {
-        public TaskTwo() : base("           Jan Feb March\n" +
-                                "    Bob    4   6   4\n" +
-                                "    Pete   6   3   5\n" +
-                                "    Jill   8   4   5\n" +
-                                "    Jack   10  8   5\n" +
-                                "\n" +
-                                "Hard code the data above into the two arrays\n" +
-                                "Note: Months is not an array because this will just be headings\n"
-            , "Task Two") {}
+        public TaskTwo() : base("What would you do if you wanted to record car details for the years 2012 – 2015?\n"
+            , "Task Four") {}
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            Console.WriteLine("What would you do if you wanted to record car details for the years 2012 – 2015?");
+            
+            Console.WriteLine("I would create a database with a table that required a unique identifier, preferably " +
+                              "an integer, then I would store the details of the cars in separate rows whereas the " +
+                              "entries will be added in columns which means the cars must have the data specified " +
+                              "for the detail of a car.");
         }
     }
 }
