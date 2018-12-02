@@ -1,3 +1,4 @@
+using System;
 using Layout;
 
 namespace Procedures_and_Functions.Papers.ProcedureFunctionSheet.Tasks
@@ -20,10 +21,64 @@ namespace Procedures_and_Functions.Papers.ProcedureFunctionSheet.Tasks
                                 "  f. Ensure the program continually loops allowing the user to perform many " +
                                 "calculations.\n"
             , "Task Two"){}
+
+        private double Add(double numOne, double numTwo)
+        {
+            return numOne + numTwo;
+        }
+        private double Sub(double numOne, double numTwo)
+        {
+            return numOne - numTwo;
+        }
+
+        private double Mul(double numOne, double numTwo)
+        {
+            return numOne * numTwo;
+        }
+        private double Div(double numOne, double numTwo)
+        {
+            return numOne / numTwo;
+        }
+        
+        private double GetValidNumber(string request)
+        {
+            return Utils.AskUserDouble(request);
+        }
         
         public override void Run()
         {
-            throw new System.NotImplementedException();
+            double num1 = GetValidNumber("Number One");
+            double num2 = GetValidNumber("Number Two");
+            
+            char opp = Utils.AskUserChar("Please input your operator (+|-|*|/)");
+
+            double total;
+            
+            if (opp == '+')
+            {
+                total = Add(num1, num2);
+                Console.WriteLine("{0} {1} {2} = {3}", num1, opp, num2, total);
+            }
+            else if (opp == '-')
+            {
+                total = Sub(num1, num2);
+                Console.WriteLine("{0} {1} {2} = {3}", num1, opp, num2, total);
+            }
+            else if (opp == '*')
+            {
+                total = Mul(num1, num2);
+                Console.WriteLine("{0} {1} {2} = {3}", num1, opp, num2, total);
+            }
+            else if (opp == '/')
+            {
+                total = Div(num1, num2);
+                Console.WriteLine("{0} {1} {2} = {3}", num1, opp, num2, total);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Operator");
+                Run();
+            }
         }
     }
 }
