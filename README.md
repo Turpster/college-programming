@@ -9,5 +9,21 @@ I will make C# Projects in a College Programming solution file with an addition 
 	* Please note that you will not be able to run this project without the .NET Core <b>2.1</b> Runtime.
 2. Open your *.csproj IDE such as [JetBrains Rider](https://www.jetbrains.com/rider/) or the [Visual Studio IDE](https://visualstudio.microsoft.com/vs/).
 3. Run the `Base` Project.
+## Complete Sheet
+See what has been completed.
+- [x] Variables and DataTypes
+- [x] Selection
+- [x] Iteration
+- [x] Arrays
+- [x] Procedures and Functions
+- [ ] Standard Algorithms
+- [ ] Files
+- [ ] FormBased
+- [ ] Recursion
+- [ ] OOP
+- [ ] ADTs
+- [ ] Searching and Sorting
+- [ ] Dictionary Hash
+
 ## Why?
 I wanted to make my work neat and presentable for anyone who is wondering my Github account and for future employablity.
