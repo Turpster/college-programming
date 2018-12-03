@@ -7,7 +7,7 @@ I will make C# Projects in a College Programming solution file with an addition 
 ## Running
 1. You will need the [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.1) installed to run the project
 	* Please note that you will not be able to run this project without the .NET Core <b>2.1</b> SDK.
-2. Open your *.csproj IDE such as [JetBrains Rider](https://www.jetbrains.com/rider/) or the [Visual Studio IDE](https://visualstudio.microsoft.com/vs/).
+2. Open your `*.csproj` IDE such as [JetBrains Rider](https://www.jetbrains.com/rider/) or the [Visual Studio IDE](https://visualstudio.microsoft.com/vs/) and open the `*.sln` file.
 3. Run the `Base` Project.
 ## Complete Sheet
 See what has been completed.
