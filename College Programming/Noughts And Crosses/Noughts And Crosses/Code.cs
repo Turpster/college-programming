@@ -1,10 +1,9 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 
-namespace NoughtsandCrosses
+namespace NoughtsAndCrosses
 {
     class Program
     {
@@ -14,29 +13,60 @@ namespace NoughtsandCrosses
         // materials written by the AQA COMP1 Programmer Team developed in 
         // the Visual Studio C# Express 2008 programming environment
 
-        private static char[,] Board = new char[4, 4];
-        private static string PlayerOneName;
-        private static string PlayerTwoName;
-        private static float PlayerOneScore;
-        private static float PlayerTwoScore;
-        private static int XCoord;
-        private static int YCoord;
-        private static bool ValidMove;
-        private static int NoOfMoves;
-        private static bool GameHasBeenWon;
-        private static bool GameHasBeenDrawn;
-        private static char CurrentSymbol;
-        private static char StartSymbol;
-        private static char PlayerOneSymbol;
-        private static char PlayerTwoSymbol;
-        private static char Answer;
+        public static char[,] Board = new char[4, 4];
+        public static string PlayerOneName;
+        public static string PlayerTwoName;
+        public static float PlayerOneScore;
+        public static float PlayerTwoScore;
+        public static int XCoord;
+        public static int YCoord;
+        public static bool ValidMove;
+        public static int NoOfMoves;
+        public static bool GameHasBeenWon;
+        public static bool GameHasBeenDrawn;
+        public static char CurrentSymbol;
+        public static char StartSymbol;
+        public static char PlayerOneSymbol;
+        public static char PlayerTwoSymbol;
+        public static char Answer;
 
-        static void Main(string[] args)
+        
+        public static string GetName(string request)
         {
-            Console.WriteLine("What is the name of player one? ");
-            PlayerOneName = Console.ReadLine();
-            Console.WriteLine("What is the name of player two? ");
-            PlayerTwoName = Console.ReadLine();
+            string name = "";
+            bool GetName = true;
+            while(GetName)
+            {
+                Console.Write(request + ": ");
+                name = Console.ReadLine();
+                if (!(name.Length >= 2))
+                {
+                    Console.WriteLine("Name has to be 2 or more letters.");
+                    GetName = true;
+                }
+                else
+                {
+                    GetName = false;
+                }
+                if (PlayerOneName.Equals(name, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    Console.WriteLine("Cannot have the same name twice");
+                    GetName = true;
+                }
+                else
+                {
+                    GetName = false;
+                }
+            }
+
+            return name;
+        }
+
+        public static void Main(string[] args)
+        {
+            PlayerOneName = GetName("What is the name of player one?");
+            PlayerTwoName = GetName("What is the name of player two?");
+
             Console.WriteLine();
             PlayerOneScore = 0;
             PlayerTwoScore = 0;
@@ -167,13 +197,19 @@ namespace NoughtsandCrosses
             Console.WriteLine();
         }  // end of GetMoveCoordinates
 
-        public static bool CheckValidMove(int XCoordinate, int YCoordinate, char[,] Board)
+        public static bool CheckValidMove(int x, int y, char[,] Board)
         {
-            bool ValidMove = !(XCoordinate < 1 || XCoordinate > 3);
+            bool ValidMove = true;
 
-            if (Board[XCoordinate, YCoordinate] == 'O' || Board[XCoordinate, YCoordinate] == 'X')
+            var range = Enumerable.Range(1, 3);
+            if (range.Contains(x) && range.Contains(y)) // Check X coordinate is valid
                 ValidMove = false;
             
+            else if (Board[x, y] != ' ')
+            {
+                ValidMove = false;
+            }
+
             return ValidMove;
         }  // end CheckValidMove
 
@@ -187,25 +223,39 @@ namespace NoughtsandCrosses
             for (Column = 1; Column <= 3; Column++)
             {
                 if (Board[Column, 1] == Board[Column, 2]
-                    && Board[Column, 2] == Board[Column, 3]
-                    && Board[Column, 2] != ' ')
+                        && Board[Column, 2] == Board[Column, 3]
+                        && Board[Column, 2] != ' ')
                     XOrOHasWon = true;
             }
             for (Row = 1; Row <= 3; Row++)
             {
                 if (Board[1, Row] == Board[2, Row]
-                    && Board[2, Row] == Board[3, Row]
-                    && Board[2, Row] != ' ')
+                        && Board[2, Row] == Board[3, Row]
+                        && Board[2, Row] != ' ')
                     XOrOHasWon = true;
             }
 
-            if (Board[1, 1] == Board[2, 2]
-                && Board[2, 2] == Board[3, 3]
-            ) XOrOHasWon = true;
-            if (Board[3, 1] == Board[2, 2]
-                && Board[2, 2] == Board[3, 1]
-                && Board[2, 2] != ' '
-            ) XOrOHasWon = true;
+            
+            for (int y = 1; y <= 3; y+=1)
+            {
+                for (int x = 1; 1 <= 3; x += 1)
+                {
+                    if (Board[x, y] != ' ')
+                    {
+                        XOrOHasWon = true;
+                    }
+                }
+            }
+            for (int y = 1; y <= 3; y += 1)
+            {
+                for (int x = 3; 1 >= 1; x -= 1)
+                {
+                    if (Board[x, y] != ' ')
+                    {
+                        XOrOHasWon = true;
+                    }
+                }
+            }
 
             return XOrOHasWon;
         }  // end of CheckXOrOHasWon

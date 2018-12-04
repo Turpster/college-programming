@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -7,7 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <Compile Include="Onedrive Data\03.MorseCode\Paper1_ASLv1_2018_CSharp_Pre_0.0.4.cs.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Folder Include="Pre-Release" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Include="Noughts And Crosses\Code.cs" />
     </ItemGroup>
 
 </Project>
