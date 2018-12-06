@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp2.1</TargetFramework>
+        <TargetFramework>netstandard1.0</TargetFramework>
         <RootNamespace>Noughts_And_Crosses</RootNamespace>
     </PropertyGroup>
 
@@ -15,7 +15,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="Noughts And Crosses\Code.cs" />
+      <Reference Include="System.Console, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+        <HintPath>C:\Users\Reece.Scott\.nuget\packages\microsoft.netcore.app\2.1.0\ref\netcoreapp2.1\System.Console.dll</HintPath>
+      </Reference>
     </ItemGroup>
 
 </Project>
