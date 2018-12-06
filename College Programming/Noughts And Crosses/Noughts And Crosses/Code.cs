@@ -1,7 +1,5 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace NoughtsAndCrosses
 {
@@ -111,7 +109,7 @@ namespace NoughtsAndCrosses
                     } while (!ValidMove);
                     Board[XCoord, YCoord] = CurrentSymbol;
                     DisplayBoard(Board);
-                    GameHasBeenWon = CheckXOrOHasWon(Board);
+                    GameHasBeenWon = CheckXorOHasWon(Board);
                     NoOfMoves++;
                     if (!GameHasBeenWon)
                     {
@@ -120,13 +118,10 @@ namespace NoughtsAndCrosses
                             GameHasBeenDrawn = true;
                         else
                         {
-                            if (CurrentSymbol == 'X')
-                                CurrentSymbol = 'O';
-                            else
-                                CurrentSymbol = 'X';
+                            CurrentSymbol = CurrentSymbol == 'X' ? 'O' : 'X';
                         }
                     }
-                } while (!GameHasBeenWon && !GameHasBeenDrawn);
+                } while (!(GameHasBeenWon && GameHasBeenDrawn));
                 if (GameHasBeenWon)   // Update scores and display results
                 {
                     if (PlayerOneSymbol == CurrentSymbol)
@@ -143,15 +138,15 @@ namespace NoughtsAndCrosses
                 else
                     Console.WriteLine("A draw this time!");
                 Console.WriteLine();
-                Console.WriteLine(PlayerOneName + ", your score is: " + PlayerOneScore.ToString());
-                Console.WriteLine(PlayerTwoName + ", your score is: " + PlayerTwoScore.ToString());
+                Console.WriteLine(PlayerOneName + ", your score is: " + PlayerOneScore);
+                Console.WriteLine(PlayerTwoName + ", your score is: " + PlayerTwoScore);
                 Console.WriteLine();
                 if (StartSymbol == PlayerOneSymbol)
                     StartSymbol = PlayerTwoSymbol;
                 else
                     StartSymbol = PlayerOneSymbol;
                 Console.WriteLine("Another game Y/N? ");
-                Answer = char.Parse(Console.ReadLine());
+                Answer = Console.ReadKey().KeyChar;
             } while (Answer != 'N' && Answer != 'n');
         } // end Main
 
@@ -164,7 +159,7 @@ namespace NoughtsAndCrosses
             Console.WriteLine("--+-------");
             for (Row = 1; Row <= 3; Row++)
             {
-                Console.Write((Row).ToString() + " | ");
+                Console.Write(Row + " | ");
                 for (Column = 1; Column <= 3; Column++)
                 {
                     Console.Write(Board[Column, Row] + " ");
@@ -188,10 +183,10 @@ namespace NoughtsAndCrosses
             }
         }  // end ClearBoard
 
-        public static void GetMoveCoordinates(ref int XCoordinate, ref int YCoordinate)
+        public static void GetMoveCoordinates(ref int xCoordinate, ref int YCoordinate)
         {
             Console.Write("Enter x coordinate: ");
-            XCoordinate = int.Parse(Console.ReadLine());
+            xCoordinate = int.Parse(Console.ReadLine());
             Console.Write("Enter y coordinate: ");
             YCoordinate = int.Parse(Console.ReadLine());
             Console.WriteLine();
@@ -213,51 +208,48 @@ namespace NoughtsAndCrosses
             return ValidMove;
         }  // end CheckValidMove
 
-        public static bool CheckXOrOHasWon(char[,] Board)
+        public static bool CheckXorOHasWon(char[,] board)
         {
-            bool XOrOHasWon;
-            int Row;
-            int Column;
+            bool xorOHasWon;
+            int row;
+            int column;
 
-            XOrOHasWon = false;
-            for (Column = 1; Column <= 3; Column++)
+            xorOHasWon = false;
+            for (column = 1; column <= 3; column++)
             {
-                if (Board[Column, 1] == Board[Column, 2]
-                        && Board[Column, 2] == Board[Column, 3]
-                        && Board[Column, 2] != ' ')
-                    XOrOHasWon = true;
+                if (board[column, 1] == board[column, 2]
+                        && board[column, 2] == board[column, 3]
+                        && board[column, 2] != ' ')
+                    xorOHasWon = true;
             }
-            for (Row = 1; Row <= 3; Row++)
+            for (row = 1; row <= 3; row++)
             {
-                if (Board[1, Row] == Board[2, Row]
-                        && Board[2, Row] == Board[3, Row]
-                        && Board[2, Row] != ' ')
-                    XOrOHasWon = true;
+                if (board[1, row] == board[2, row]
+                        && board[2, row] == board[3, row]
+                        && board[2, row] != ' ')
+                    xorOHasWon = true;
             }
 
             
-            for (int y = 1; y <= 3; y+=1)
+            for (int xy = 1; xy <= 3; xy+=1)
             {
-                for (int x = 1; 1 <= 3; x += 1)
+                if (board[xy, xy] != ' ')
                 {
-                    if (Board[x, y] != ' ')
-                    {
-                        XOrOHasWon = true;
-                    }
+                    xorOHasWon = true;
                 }
             }
             for (int y = 1; y <= 3; y += 1)
             {
                 for (int x = 3; 1 >= 1; x -= 1)
                 {
-                    if (Board[x, y] != ' ')
+                    if (board[x, y] != ' ')
                     {
-                        XOrOHasWon = true;
+                        xorOHasWon = true;
                     }
                 }
             }
 
-            return XOrOHasWon;
+            return xorOHasWon;
         }  // end of CheckXOrOHasWon
 
         public static char GetWhoStarts()
