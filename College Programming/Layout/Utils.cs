@@ -558,4 +558,33 @@ namespace Layout
             }
         }
     }
+    public class BubbleSort
+{
+    private bool _numbersAreSorted = false;
+
+    public float[] Sort(float[] _list)
+    {
+        float num1;
+        float num2;
+
+        while (!_numbersAreSorted)
+        {
+            _numbersAreSorted = true;
+            for (int i = 0; i < _list.Length - 1; i++)
+            {
+                num1 = _list[i];
+                num2 = _list[i + 1];
+                if (num1 > num2)
+                {
+                    _list[i] = num2;
+                    _list[i + 1] = num1;
+                    i--;
+                    _numbersAreSorted = false;
+                }
+            }
+        }
+
+        return _list;
+    }
+}
 }
