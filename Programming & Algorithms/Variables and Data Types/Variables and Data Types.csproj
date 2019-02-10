@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>Variables_and_Data_Types</RootNamespace>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Layout\Layout.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Papers\Simple Output\Tasks" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Papers\Simple Calculations\SimpleCalculationsPaper.cs" />
+      <Compile Remove="Papers\Input\InputPaper.cs" />
+      <Compile Remove="Papers\Random Number\RandomNumberPaper.cs" />
+      <Compile Remove="Papers\Variable Excercises #1\VariableExercisesOne.cs" />
+      <Compile Remove="Papers\Simple Variables Use\SimpleVariablesUsePaper.cs" />
+      <Compile Remove="Papers\Simple Output\SimpleOutputPaper.cs" />
+    </ItemGroup>
+</Project>

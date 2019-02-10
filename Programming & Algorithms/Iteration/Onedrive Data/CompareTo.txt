@@ -1,0 +1,68 @@
+namespace ConsoleApp5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Result = 0;
+            string comparisonString = "";
+            string comparisonString2 = "";
+
+            //
+            // program to test use of CompareTo function
+            //
+
+
+            // compare tewo strings the same
+
+            comparisonString = "David";
+            comparisonString2 = "David";
+
+            Result = comparisonString.CompareTo(comparisonString2);
+
+            Console.WriteLine(Result);
+
+            Console.WriteLine("Compare strings {0}  and  {1}  Result returned is  {2}", comparisonString, comparisonString2, Result);
+            Console.ReadLine();
+
+            // compare two different strings
+
+            comparisonString = "David";
+            comparisonString2 = "Christopher";
+
+            Result = comparisonString.CompareTo(comparisonString2);
+
+            Console.WriteLine("Compare strings {0}  and  {1}  Result returned is  {2}", comparisonString, comparisonString2, Result);
+            Console.ReadLine();
+
+            // compare two different strings other way round
+
+            comparisonString = "Christopher";
+            comparisonString2 = "David";
+
+            Result = comparisonString.CompareTo(comparisonString2);
+
+            Console.WriteLine("Compare strings {0}  and  {1}  Result returned is  {2}", comparisonString, comparisonString2, Result);
+            Console.ReadLine();
+
+            //
+            // it would appear that CompareTo returns 0 if the same
+            //                                returns 1 if greater
+            //                                returns -1 if less
+            //
+
+
+            // COMPARE david and DAVID 
+
+            comparisonString = "david";
+            comparisonString2 = "David";
+
+            Result = comparisonString.CompareTo(comparisonString2);
+
+            Console.WriteLine("Compare strings {0}  and  {1}  Result returned is  {2}", comparisonString, comparisonString2, Result);
+            Console.ReadLine();
+
+
+        }
+    }
+}

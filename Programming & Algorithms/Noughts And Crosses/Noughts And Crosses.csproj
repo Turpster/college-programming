@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>netcoreapp1.0</TargetFramework>
+        <RootNamespace>Noughts_And_Crosses</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="Onedrive Data\03.MorseCode\Paper1_ASLv1_2018_CSharp_Pre_0.0.4.cs.txt" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Pre-Release" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Reference Include="System.Console, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+        <HintPath>C:\Users\Reece.Scott\.nuget\packages\microsoft.netcore.app\2.1.0\ref\netcoreapp2.1\System.Console.dll</HintPath>
+      </Reference>
+      <Reference Include="System.IO.FileSystem, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+        <HintPath>C:\Users\Reece.Scott\.nuget\packages\microsoft.netcore.app\2.1.0\ref\netcoreapp2.1\System.IO.FileSystem.dll</HintPath>
+      </Reference>
+    </ItemGroup>
+
+</Project>
