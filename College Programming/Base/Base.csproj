@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
@@ -10,6 +10,7 @@
       <ProjectReference Include="..\Files\Files.csproj" />
       <ProjectReference Include="..\Iteration\Iteration.csproj" />
       <ProjectReference Include="..\Layout\Layout.csproj" />
+      <ProjectReference Include="..\Pre-Release\Pre-Release.csproj" />
       <ProjectReference Include="..\Procedures and Functions\Procedures and Functions.csproj" />
       <ProjectReference Include="..\Selection\Selection.csproj" />
       <ProjectReference Include="..\Standard Algorithms\Standard Algorithms.csproj" />

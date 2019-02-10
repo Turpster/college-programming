@@ -4,6 +4,8 @@ using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
 
 namespace Layout
 {
@@ -244,7 +246,92 @@ namespace Layout
             return 0;
         }
     }
+    public class Algorithms
+    {   
+        
+        
+        /// <summary>
+        /// Preforms a Linear Search
+        /// </summary>
+        /// <param name="array">Array of values</param>
+        /// <param name="target">The value you suspect to be in the array</param>
+        /// <typeparam name="T">The datatype</typeparam>
+        /// <returns>True for found, false for not found</returns>
+        /// <pseudocode>https://gist.github.com/Turpster/e9b88134797c879d0b88bd9d3034ddd8</pseudocode>
+        public static bool LinearSearch<T>(T[] array, T target)
+        {
+            foreach (T obj in array)
+            {
+                if (obj.Equals(target))
+                {
+                    return true;
+                }
+            }
 
+            return false;
+        }
+        
+        /// <summary>
+        /// Preforms a Binary Search
+        /// </summary>
+        /// <param name="array">An integer array of sorted values</param>
+        /// <param name="left">The index for the starting bound.</param>
+        /// <param name="right">The index for the ending bound.</param>
+        /// <param name="key">The value the algorithm is looking for</param>
+        /// <returns>Returns the index of the value or -1 if value is not found</returns>
+        /// <pseudocode>https://gist.github.com/Turpster/8bed7ad3c32fa1765e6d956a711f466f</pseudocode>
+        public static int BinarySearch(int[] array, int left, int right, int key)
+        {
+            if (left > right)
+            {
+                return -1;
+            }
+
+            int mid = (left + right) / 2;
+
+            if (array[mid] == key)
+            {
+                return mid;
+            }
+
+            if (array[mid] > key)
+            {
+                return BinarySearch(array, left, mid - 1, key);
+            }
+
+            return BinarySearch(array, mid + 1, right, key);
+        }
+        
+        /// <summary>
+        /// Preforms a BubbleSort
+        /// </summary>
+        /// <param name="array">Unsorted Array</param>
+        /// <returns>Sorted Array</returns>
+        /// <pseudocode>https://gist.github.com/Turpster/e0944ca298f35db8e0ef110c230dfb16</pseudocode>
+        public static int[] BubbleSort(int[] array)
+        {
+            bool change = true;
+
+            while (change)
+            {
+                for (int i = 1; i <= array.Length; i++)
+                {
+                    change = false;
+                    if (array[i] < array[i - 1])
+                    {
+                        change = true;
+                        
+                        int targetValue = array[i];
+                        array[i - 1] = array[i];
+                        
+                        array[i] = targetValue;
+                    }
+                }
+            }
+
+            return array;
+        }
+    }
 
     namespace Table
     {
@@ -274,7 +361,7 @@ namespace Layout
                 Width = width;
                 Height = height;
             }
-
+            
             public void AddEntry(KeyValuePair<Position, TableEntry> entry)
             {
                 if (TableEntries.ContainsKey(new Position(entry.Key.X, entry.Key.Y)))
@@ -507,7 +594,6 @@ namespace Layout
 
             public Position GetLocation()
             {
-
                 Position? targetPosition = Table.GetLocation(this);
                 if (targetPosition.HasValue)
                 {
@@ -558,33 +644,4 @@ namespace Layout
             }
         }
     }
-    public class BubbleSort
-{
-    private bool _numbersAreSorted = false;
-
-    public float[] Sort(float[] _list)
-    {
-        float num1;
-        float num2;
-
-        while (!_numbersAreSorted)
-        {
-            _numbersAreSorted = true;
-            for (int i = 0; i < _list.Length - 1; i++)
-            {
-                num1 = _list[i];
-                num2 = _list[i + 1];
-                if (num1 > num2)
-                {
-                    _list[i] = num2;
-                    _list[i + 1] = num1;
-                    i--;
-                    _numbersAreSorted = false;
-                }
-            }
-        }
-
-        return _list;
-    }
-}
 }
